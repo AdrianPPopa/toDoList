@@ -13,8 +13,8 @@ public class App
         toDoItemRepository .createToDoItem("Learn Java",
                 LocalDateTime.now().plusMonths(6));
 
-        ToDoItemRepository getToDoItems = new ToDoItemRepository();
-        getToDoItems.getToDoItems();
+        ToDoItemRepository gettToDoItems = new ToDoItemRepository();
+        gettToDoItems.getToDoItems();
 
     }
 }

@@ -34,7 +34,7 @@ public class ToDoItemRepository {
 
              List<ToDoItem> toDoItems = new ArrayList<>();
 
-             while (resultSet.next()); {
+             while (resultSet.next()) {
                  ToDoItem item = new ToDoItem();
                  item.setId(resultSet.getLong("id"));
                  item.setDescription(resultSet.getString("description"));
