@@ -3,6 +3,7 @@ package org.fasttrack.it.service;
 import org.fasttrack.it.domain.ToDoItem;
 import org.fasttrack.it.persistance.ToDoItemRepository;
 import org.fasttrack.it.transfer.SaveToDoItemRequest;
+import org.fasttrack.it.transfer.UpdateToDoItemRequest;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -24,5 +25,10 @@ public class ToDoItemService {
     public void deleteToDoItem(long id) throws SQLException, IOException, ClassNotFoundException {
         System.out.println("Deleting toDoItem:" + id);
         toDoItemRepository.deleteToDoItem(id);
+    }
+
+    public void updateToDoItem(Long id, UpdateToDoItemRequest request) throws SQLException, IOException, ClassNotFoundException {
+        System.out.println("Updating to do item " + id + ": " + request);
+        toDoItemRepository.updateToDoItem(id, request.isDone());
     }
 }
