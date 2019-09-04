@@ -62,12 +62,12 @@ public class ToDoItemRepository {
     }
     public void updateToDoItem(long id, boolean done) throws SQLException, IOException, ClassNotFoundException {
 
-        String sql = "UPDATE FROM to_do_item SET done = ? WHERE id = ?";
+        String sql = "UPDATE to_do_item SET done = ? WHERE id = ?";
 
         try (Connection connection = DatabaseConfiguration.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
             preparedStatement.setBoolean(1, done);
-            preparedStatement.setLong(1, id);
+            preparedStatement.setLong(2, id);
 
             preparedStatement.executeUpdate();
         }
